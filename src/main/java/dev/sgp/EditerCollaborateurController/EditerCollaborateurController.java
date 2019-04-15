@@ -62,15 +62,21 @@ public class EditerCollaborateurController extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
+		//récupération du paramètre, provenant du formulaire
 		String matricule = request.getParameter("matricule");
 		String titre = request.getParameter("titre"); 
 		String nom = request.getParameter("nom"); 
 		String prenom = request.getParameter("prenom"); 
 		
+		//verificiation que les paramètres ne sont pas vides
+		
 		if(matricule.isEmpty() || titre.isEmpty() || nom.isEmpty() || prenom.isEmpty() ) {
+			//lorsqu'ils sont vides, on envoit un message d'erreurs suivi du messages
 			
 			response.sendError(400, "les paramètres suivant sont incorrects");
 		}else {
+			
+			//dans le cas où ils sont correctement rempli, on affiche une page qui contiendra son ajout
 			response.setStatus(201);
 			response.getWriter().write("<p>Matricule : "+matricule+ ", titre : " +titre +" nom : "+nom + ", prenom : "+prenom+"</p>");
 		}
