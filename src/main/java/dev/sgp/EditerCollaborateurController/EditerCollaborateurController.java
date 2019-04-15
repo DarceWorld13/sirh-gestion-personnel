@@ -45,7 +45,7 @@ public class EditerCollaborateurController extends HttpServlet {
 
 		}
 
-		if (matricule != null && !(matricule.isEmpty())) {
+		/*if (matricule != null && !(matricule.isEmpty())) {
 
 			response.setContentType("text/html");
 			response.getWriter().write("<p>Matricule : M01</p>");
@@ -55,7 +55,7 @@ public class EditerCollaborateurController extends HttpServlet {
 			response.setContentType("text/html");
 			response.sendError(400, "un matricule est attendu");
 
-		}
+		}*/
 
 	}
 
